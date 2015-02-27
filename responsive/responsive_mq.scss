@@ -1,0 +1,113 @@
+$widescreen:1600px;
+$mediumscreen:760px;
+$smallscreen:400px;
+
+@mixin responsive($width){
+	@if $width== wide-screens{
+		@media only screen and (max-width:$widescreen){@content;}
+	}
+	@else if $width== medium-screens{
+		@media only screen and (max-width:$mediumscreen){@content;}
+	}
+	@else if $width== small-screens{
+		@media only screen and (max-width:$smallscreen){@content;}
+	}
+}
+
+
+*{
+	margin:0;
+	padding:0;
+}
+
+#container{
+	width:90%;
+	margin:0 auto;
+}
+
+header{
+	width:100%;
+	float:left;
+	padding:2.5%;
+	
+	
+	h1 {
+		@include responsive(wide-screens){
+			font-size:4.6em;
+	}
+		@include responsive(medium-screens){
+			font-size:3.4em;
+	}
+		@include responsive(small-screens){
+			font-size:2.2em;
+	}
+	}
+}
+
+nav {
+	width:100%;
+	float:left;
+	margin-bottom:2%;
+		ul li{
+			display:inline;
+			a{
+			padding:.3% 4%;
+			&:link,&:visited{
+			text-decoration:none;
+			background-color:#999;
+			color:#fff;
+			@include responsive(wide-screens){
+			font-size:1.5em;
+				}
+			@include responsive(medium-screens){
+			font-size:.9em;
+				}
+			@include responsive(small-screens){
+			font-size:.7em;
+				}
+			}
+			&:hover{
+				background-color:#fff;
+				color:#999;
+				}
+			}
+		}
+}
+
+.mainAds{
+		float:left;
+		margin: 0 2% 2% 0;
+		border: solid #000 2px;
+		@include responsive(wide-screens){
+			width:30%;
+			}
+		@include responsive(medium-screens){
+			width:30%;
+			}
+		@include responsive(small-screens){
+			width:46%;
+			}
+	
+	
+	img{
+		width:100%;
+		float:left;
+	}
+}
+
+.secondaryAds{
+	float:left;
+	width:41%;
+	padding-right:1%;
+	margin-right:2%;
+	padding:3%;
+	border:1px solid #000;
+}
+
+footer{
+	width:100%;
+	float:left;
+	margin-top:3%;
+	padding:2%;
+}
+
