@@ -1,0 +1,21 @@
+li{
+	display:inline;
+	font-family: Verdana,Arial,sans-serif;
+	font-size:1em;
+	padding:6px;
+	margin: 0px -7px;
+	
+	
+}
+
+li a:link,li a:visited{
+	padding: 10px 8px;
+	text-decoration:none;
+	background-color:#666;
+	color:#fff;
+}
+	
+li a:hover{
+	background-color:#eee;
+	color:#000;
+}
